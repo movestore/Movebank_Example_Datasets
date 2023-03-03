@@ -39,7 +39,7 @@ To check: This study contains a combination of GPS and Argos data, some birds wi
 * Linking processed data back to another version of the same dataset may rely on the timestamps remaining identical. 
 
 **Examples**  
-Study [Straw-colored fruit bats (Eidolon helvum) in Africa 2009-2014](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study404939825) ([Scharf et al., 2019](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study404939825))  
+Study [Straw-colored fruit bats (Eidolon helvum) in Africa 2009-2014](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study404939825) ([Scharf et al., 2019](https://www.doi.org/10.5441/001/1.k8n02jn8))  
 To check: This study contains milliseconds, which should be present after reading in the data. If intentionally reducing precision, this dataset contains lots of ".998" values that should ideally be rounded up.
 
 ## Reading identifiers.
@@ -49,13 +49,27 @@ To check: This study contains milliseconds, which should be present after readin
 * Each event record in Movebank has an [event id](http://vocab.nerc.ac.uk/collection/MVB/current/MVB000103/) which may be used as a key to link data across tables and files. If these values are read as numeric, they will sometimes be converted to exponents, which can break subsequent code or attempts to join data.  
 * User-assigned Animal and Tag IDs (see [above](#working-with-deployed-data)) are all numeric for some studies, but non-numeric characters will be present in others. Code that assumes values are numeric will break when it encounters these values.  
 
-## Live data streams.
+## Supporting live data streams.
 **Recommendation:** For applications intended to work with data as they are being collected, provide options to select recent data.  
 
-Include an example for testing alert/reporting-type apps? This could mention filtering using relevant fields in the REST API: timestamp, update_ts, provider_update_ts, argos_transmission_timestamp, transmission_timestamp
+**Examples**
+See Study [LifeTrack White Stork SW Germany](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study21231406) ([Fiedler et al., 2019](https://www.doi.org/10.5441/001/1.ck04mn78)
+
+This example has incoming data as of March 2023. *Note it is very large!* In most cases, applications working with incoming data will want to limit requests to newer data. This can be done by filtering using relevant fields in the [REST API](https://github.com/movebank/movebank-api-doc/blob/master/movebank-api.md) including timestamp or (when present) update_ts, provider_update_ts, argos_transmission_timestamp and transmission_timestamp.
+
+## Working with non-location data.
+**Recommendation:** Know how to identify data from non-location sensors, and how to process these data, if it is within the scope of your application. Be aware that there are completed studies without any location data.
+
+**Why this matters** 
+* Most data in Movebank is not location coordinates, but measurements from other bio-logging sensors such as acceleration.
+* These sensor measurements may be indicated by the [sensor type](http://vocab.nerc.ac.uk/collection/MVB/current/MVB000170/), or may be included in the same events with location estimates. For example, if temperature is sampled on the same schedule as GPS fixes, researchers will typically want these values stored together. If acceleration is sampled on a different schedule from GPS, or if the tags are not collecting location estimates, they can be stored in separate tables.
+
+**Examples**
 
 ## References
 Berthold P, Kaatz C, Kaatz M, Querner U, van den Bossche W, Chernetsov N, Fiedler W, Wikelski M. 2022. Data from: Study "MPIAB Argos white stork tracking (1991-2022)". Movebank Data Repository. https://www.doi.org/10.5441/001/1.k29d81dh
+
+Fiedler W, Flack A, Schäfle W, Keeves B, Quetting M, Eid B, Schmid H, Wikelski M. 2019. Data from: Study "LifeTrack White Stork SW Germany" (2013-2019). Movebank Data Repository. https://www.doi.org/10.5441/001/1.ck04mn78
 
 Gagliardo A, Cioccarelli S, Giunchi D, Pollonara E, Colombo S, Casini G, Bingman VP. 2022. Data from: Deconstructing the flight paths of hippocampal-lesioned homing pigeons as they navigate near home offers insight into spatial perception and memory without a hippocampus. Movebank Data Repository. https://www.doi.org/10.5441/001/1.fs61hr7v
 
