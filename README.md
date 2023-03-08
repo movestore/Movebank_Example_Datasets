@@ -65,6 +65,7 @@ This example has incoming data as of March 2023. *Note it is very large!* In mos
 * These sensor measurements may be indicated by the [sensor type](http://vocab.nerc.ac.uk/collection/MVB/current/MVB000170/), or may be included in the same events with location estimates. For example, if temperature is sampled on the same schedule as GPS fixes, researchers will typically want these values stored together. If acceleration is sampled on a different schedule from GPS, or if the tags are not collecting location estimates, they can be stored in separate tables.
 
 **Examples**
+[LifeTrack White Stork Poland ECG](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study25166516)
 
 ## References
 Berthold P, Kaatz C, Kaatz M, Querner U, van den Bossche W, Chernetsov N, Fiedler W, Wikelski M. 2022. Data from: Study "MPIAB Argos white stork tracking (1991-2022)". Movebank Data Repository. https://www.doi.org/10.5441/001/1.k29d81dh
