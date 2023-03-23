@@ -64,7 +64,7 @@ This example has incoming data as of March 2023. *Note it is very large!* In mos
 * Most data in Movebank is not location coordinates, but measurements from other bio-logging sensors such as acceleration.
 * These sensor measurements may be indicated by the [sensor type](http://vocab.nerc.ac.uk/collection/MVB/current/MVB000170/), or may be included in the same events with location estimates. For example, if temperature is sampled on the same schedule as GPS fixes, researchers will typically store these values together. If acceleration is sampled on a different schedule from GPS, or if the tags are not collecting location estimates, they can be stored in separate tables.
 
-**Examples**
+**Examples**  
 Study [LifeTrack White Stork Poland ECG](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study25166516)  
 To check: This study contains sensor types GPS, acceleration and heart-rate. Make sure your application should identify or access the acceleration and heart rate data, if they are of interest.
 
