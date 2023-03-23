@@ -62,13 +62,19 @@ This example has incoming data as of March 2023. *Note it is very large!* In mos
 
 **Why this matters** 
 * Most data in Movebank is not location coordinates, but measurements from other bio-logging sensors such as acceleration.
-* These sensor measurements may be indicated by the [sensor type](http://vocab.nerc.ac.uk/collection/MVB/current/MVB000170/), or may be included in the same events with location estimates. For example, if temperature is sampled on the same schedule as GPS fixes, researchers will typically want these values stored together. If acceleration is sampled on a different schedule from GPS, or if the tags are not collecting location estimates, they can be stored in separate tables.
+* These sensor measurements may be indicated by the [sensor type](http://vocab.nerc.ac.uk/collection/MVB/current/MVB000170/), or may be included in the same events with location estimates. For example, if temperature is sampled on the same schedule as GPS fixes, researchers will typically store these values together. If acceleration is sampled on a different schedule from GPS, or if the tags are not collecting location estimates, they can be stored in separate tables.
 
 **Examples**
-[LifeTrack White Stork Poland ECG](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study25166516)
+Study [LifeTrack White Stork Poland ECG](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study25166516)  
+To check: This study contains sensor types GPS, acceleration and heart-rate. Make sure your application should identify or access the acceleration and heart rate data, if they are of interest.
+
+Study [Eastern whip-poor-will migrations (data from English et al. 2017)](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study18072398) (English et al., 2017)  
+To check: This study contains the sensor type solar-geolocator-raw (light-level recordings that can be analyzed with time to estimate location), but no location estimates or location sensors. Applications looking only for locations and location sensors could be configured to return a message that no location data exist for the study.
 
 ## References
 Berthold P, Kaatz C, Kaatz M, Querner U, van den Bossche W, Chernetsov N, Fiedler W, Wikelski M. 2022. Data from: Study "MPIAB Argos white stork tracking (1991-2022)". Movebank Data Repository. https://www.doi.org/10.5441/001/1.k29d81dh
+
+English PA, Mills AM, Cadman MD, Heagy AE, Rand GJ, Green DJ, Nocera JJ. 2017. Data from: Tracking the migration of a nocturnal aerial insectivore in the Americas. Movebank Data Repository. https://www.doi.org/10.5441/001/1.66jq0844
 
 Fiedler W, Flack A, Schäfle W, Keeves B, Quetting M, Eid B, Schmid H, Wikelski M. 2019. Data from: Study "LifeTrack White Stork SW Germany" (2013-2019). Movebank Data Repository. https://www.doi.org/10.5441/001/1.ck04mn78
 
