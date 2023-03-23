@@ -71,6 +71,15 @@ To check: This study contains sensor types GPS, acceleration and heart-rate. Mak
 Study [Eastern whip-poor-will migrations (data from English et al. 2017)](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study18072398) (English et al., 2017)  
 To check: This study contains the sensor type solar-geolocator-raw (light-level recordings that can be analyzed with time to estimate location), but no location estimates or location sensors. Applications looking only for locations and location sensors could be configured to return a message that no location data exist for the study.
 
+## Working with partial data access.
+**Recommendation:** Data owners control access to their studies in Movebank. If they have not provided permissions for a Movebank account or the public to download data, the account won't be able to download data for use in other applications. It is also possible for owners to use an embargo to allow the public to prohibit public access to more recent locations.  
+
+**Why this matters** 
+* Study and animal-level statistics provided by Movebank will typically represent the full study, but may not reflect what a user is allowed to download.
+
+**Examples**  
+To do.
+
 ## References
 Berthold P, Kaatz C, Kaatz M, Querner U, van den Bossche W, Chernetsov N, Fiedler W, Wikelski M. 2022. Data from: Study "MPIAB Argos white stork tracking (1991-2022)". Movebank Data Repository. https://www.doi.org/10.5441/001/1.k29d81dh
 
