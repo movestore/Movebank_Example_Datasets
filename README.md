@@ -71,6 +71,28 @@ To check: This study contains sensor types GPS, acceleration and heart-rate. Mak
 Study [Eastern whip-poor-will migrations (data from English et al. 2017)](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study18072398) (English et al., 2017)  
 To check: This study contains the sensor type solar-geolocator-raw (light-level recordings that can be analyzed with time to estimate location), but no location estimates or location sensors. Applications looking only for locations and location sensors could be configured to return a message that no location data exist for the study.
 
+## Working with duplicate and near-duplicate data records.
+**Recommendation:** Check for and address duplicates, considering your attributes of interest and potential quality differences in near-duplicate records. (In the [Movebank App](https://www.moveapps.org/apps/browser/8eeafaad-410e-440b-a105-94f6ff4109d8) duplicates must be addressed when accessing data, and [multiple options](https://github.com/movestore/movebank-download#documentation) are offered.) If you are the data owner, you can [exclude](https://www.movebank.org/cms/movebank-content/import-custom-tabular-data#finishing_the_data_import) duplicates when importing data, or [filter](https://www.movebank.org/cms/movebank-content/general-data-filters#duplicate_filter) duplicates present in your study.
+
+**Why this matters**  
+* Duplicates can be introduced to a dataset if the same data are added through multiple sources.
+* What is a "duplicate" depends on your data attributes of interest. For data owners, it can be important to retain near-duplicate records: for example, a reduced or lower-quality data record may be transmitted via a live feed, and a more extended or higher-quality data record can sometimes be obtained later if the tag is retrieved from the field. This later version may contain more or different values from the original, and is added to the study later. In this case, the data owner typically does not want to exclude these records from the import because it contains the better-quality version of the record.
+* In order to prevent data loss, Movebank does not overwrite or delete existing data records, although this can be done by the data owner.
+
+**Examples**  
+To do.
+
+## Working with outliers.
+**Recommendation:** Check for and remove outliers from your analysis, considering the accuracy necessary for your use of the data.
+
+**Why this matters** 
+* Outliers can be sent automatically through data feeds or included in raw data uploaded by users.
+* Data owners commonly want to retain their full dataset, including outliers, as it can indicate behaviors or equipment reliability.
+* While data owners can flag outliers in their studies, there are often lower-quality records that may be useful for some cases (like assessing large-scale migration) but inappropriate for others (like assessing local foraging behavior).
+
+**Examples**  
+To do.
+
 ## Working with partial data access.
 **Recommendation:** Data owners control access to their studies in Movebank. If they have not provided permissions for a Movebank account or the public to download data, the account won't be able to download data for use in other applications. It is also possible for owners to use an embargo to allow the public to prohibit public access to more recent locations.  
 
