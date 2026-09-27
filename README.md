@@ -82,16 +82,17 @@ To check: This study contains the sensor type solar-geolocator-raw (light-level 
 **Examples**  
 To do.
 
-## Working with outliers.
-**Recommendation:** Check for and remove outliers from your analysis, considering the accuracy necessary for your use of the data.
+## Working with outliers and cleaned vs uncleaned data.
+**Recommendation:** Check for and remove outliers from your analysis, considering the accuracy necessary for your use of the data. Use owner-defined selections by default, indicated in the events as _visible = true_. However, be aware that not all owners have cleaned their data, and what should be considered an outlier can depend on what the data will be used for.
 
 **Why this matters** 
 * Outliers can be sent automatically through data feeds or included in raw data uploaded by users.
 * Data owners commonly want to retain their full dataset, including outliers, as it can indicate behaviors or equipment reliability.
-* While data owners can flag outliers in their studies, there are often lower-quality records that may be useful for some cases (like assessing large-scale migration) but inappropriate for others (like assessing local foraging behavior).
+* Data owners can also owners can flag outliers in their studies manually or with filters.
+* There are often lower-quality records that may be useful for some cases (like assessing large-scale migration) but inappropriate for others (like assessing local foraging behavior).
 
 **Examples**  
-To do.
+Study [Ya Ha Tinda elk project, Banff National Park, 2001-2024 (females)](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study897981076))
 
 ## Working with partial data access.
 **Recommendation:** Data owners control access to their studies in Movebank. If they have not provided permissions for a Movebank account or the public to download data, the account won't be able to download data for use in other applications. It is also possible for owners to use an embargo to allow the public to prohibit public access to more recent locations.  
