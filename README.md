@@ -83,16 +83,23 @@ To check: This study contains the sensor type solar-geolocator-raw (light-level 
 To do.
 
 ## Working with outliers and cleaned vs uncleaned data.
-**Recommendation:** Check for and remove outliers from your analysis, considering the accuracy necessary for your use of the data. Use owner-defined selections by default, indicated in the events as _visible = true_. However, be aware that not all owners have cleaned their data, and what should be considered an outlier can depend on what the data will be used for.
+**Recommendation:** Check for and remove outliers from your analysis, considering the accuracy necessary for your use of the data. Use owner-defined selections by default, indicated in the events as _[visible]([url](https://vocab.nerc.ac.uk/collection/MVB/current/MVB000209/)) = true_. However, be aware that not all owners have cleaned their data, and what should be considered an outlier can depend on what the data will be used for.
 
 **Why this matters** 
-* Outliers can be sent automatically through data feeds or included in raw data uploaded by users.
-* Data owners commonly want to retain their full dataset, including outliers, as it can indicate behaviors or equipment reliability.
+* Outliers can be sent automatically through data feeds or included in the data uploaded by users.
+* Data owners commonly want to retain their full dataset, including outliers, as it can indicate behaviors or equipment reliability, and often includes other valid measurements.
 * Data owners can also owners can flag outliers in their studies manually or with filters.
 * There are often lower-quality records that may be useful for some cases (like assessing large-scale migration) but inappropriate for others (like assessing local foraging behavior).
 
 **Examples**  
 Study [Ya Ha Tinda elk project, Banff National Park, 2001-2024 (females)](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study897981076))
+To check: This GPS dataset includes both very clear outliers, along with lower-accuracy but still plausible location estimates. The accuracy is also reflected in the gps_dop and height_above_ellipsoid values. The current version of this study on Movebank has been extensively manually filtered. This is an example of a dataset for which the purpose of use is critical to best determine which lower-quality estimates to include.
+
+Study [Osprey in North and South America 1995-2002 (Martell)]([url](https://www.movebank.org/cms/webapp?gwt_fragment=page=studies,path=study384172482)) ([Martel and Douglas, 2019](https://www.doi.org/10.5441/001/1.sv6335t3))
+To check: This study contains Argos Doppler Shift data, which have specific quality characteristics and data attributes. It includes many of the attributes used to calculate the [visible](https://vocab.nerc.ac.uk/collection/MVB/current/MVB000209) attribute. It has been carefully cleaned with the owners using the [Douglas Argos Filter](https://www.movebank.org/cms/movebank-content/argos-data-filters#douglas_argos_filter) with the "best hybrid" method (see complete settings below), which applies different settings for stationary and migratory movements (stored in _algorithm_marked_outlier_), along with manually-flagged filters (_manually_marked_outlier_), manual overrides of the filter's choice of 2 Argos location estimates to be used by the filter (argos_valid_location_manual), and manual overrides of specific filtered events to consider them valid (_manually_marked_valid_). Read the [filter documentation](https://www.movebank.org/cms/movebank-content/argos-data-filters#douglas_argos_filter) and documents referenced there for more background.
+
+<img width="668" height="499" alt="image" src="https://github.com/user-attachments/assets/476eadc3-34a3-45b3-8982-8635a45d1592" />
+
 
 ## Working with partial data access.
 **Recommendation:** Data owners control access to their studies in Movebank. If they have not provided permissions for a Movebank account or the public to download data, the account won't be able to download data for use in other applications. It is also possible for owners to use an embargo to allow the public to prohibit public access to more recent locations.  
